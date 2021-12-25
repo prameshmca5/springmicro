@@ -1,4 +1,4 @@
-package com.example.microservice1.model;
+package com.ramesh.microservice.model;
 
 
 import lombok.*;

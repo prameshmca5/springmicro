@@ -1,16 +1,15 @@
-package com.example.microservice1.Restcontroller;
+package com.ramesh.microservice;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class WelcomeRestController {
-    @GetMapping("/aa")
+public class HomeController {
+    @GetMapping("/")
     public String homePage() {
         return "HomePage";
     }
-    @GetMapping("/bb")
+    @GetMapping("/hi")
     public String hiPage() {
         return "HiPage";
     }

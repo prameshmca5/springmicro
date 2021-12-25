@@ -1,4 +1,4 @@
-package com.example.microservice1;
+package com.ramesh.microservice;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
