@@ -78,9 +78,9 @@ public class EmployeeRepositoryTest {
               .build();
       employeeRepository.save(employee3);
       // When - Action
-      Optional<Employee> emp = employeeRepository.findById(employee3.getId());
+      Employee emp = employeeRepository.findById(employee3.getId()).get();
       // Then - Verify or Output
-      assertThat(emp.get()).isNotNull();
-      assertThat(emp.get().getId()).isEqualTo(1);
+      assertThat(emp).isNotNull();
+      assertThat(emp).isEqualTo(1);
   }
 }
