@@ -47,7 +47,7 @@ public class EmployeeRepositoryTest {
         Employee saveEmployee = employeeRepository.save(employee);
         // Then - verify the output
         assertThat(saveEmployee).isNotNull();
-        assertThat(saveEmployee.getId()).isGreaterThanOrEqualTo(0);
+        assertThat(saveEmployee.getId()).isGreaterThan(0);
     }
 
    // Junit for get All Employee details
@@ -75,7 +75,7 @@ public class EmployeeRepositoryTest {
 
        // Then - Verify or Output
        assertThat(employeeList).isNotNull();
-       assertThat(employeeList.size()).isEqualTo(2);
+       assertThat(employeeList.size()).isGreaterThan(0);
    }
 
    // Junit for Get Employee by Id
@@ -96,7 +96,7 @@ public class EmployeeRepositoryTest {
       Optional<Employee> emp = employeeRepository.findById(employee.getId());
       // Then - Verify or Output
       assertThat(emp.get().getId()).isNotNull();
-      assertThat(emp.get().getId()).isEqualTo(1);
+      assertThat(emp.get().getId()).isGreaterThan(0);
   }
 
   // Junit for
@@ -163,7 +163,7 @@ public class EmployeeRepositoryTest {
         employeeRepository.delete(emp.get());
         // Then - Verify or Output
         assertThat(emp).isNotNull();
-       assertThat(emp.get().getId()).isEqualTo(6);
+       assertThat(emp.get().getId()).isGreaterThan(0);
     }
 
     // Junit for Get Custom Query
@@ -180,7 +180,7 @@ public class EmployeeRepositoryTest {
         employee = employeeRepository.findJpql(employee.getFirstName(), employee.getLastName());
        // Then - Verify or Output
         assertThat(employee).isNotNull();
-        assertThat(employee.getId()).isEqualTo(1);
+        assertThat(employee.getId()).isGreaterThan(0);
     }
     // Junit for Get Custom Query
     @DisplayName("EmployeeDetailsGetCustomQueryforJPQLNameParams")
@@ -196,7 +196,7 @@ public class EmployeeRepositoryTest {
         employee = employeeRepository.findJpqlParams(employee.getFirstName(), employee.getLastName());
         // Then - Verify or Output
         assertThat(employee).isNotNull();
-        assertThat(employee.getId()).isEqualTo(1);
+        assertThat(employee.getId()).isGreaterThan(0);
     }
 
     // Junit for Get Custom Query
@@ -214,7 +214,7 @@ public class EmployeeRepositoryTest {
        // employee = employeeRepository.findQueryJpqlNative("Ramesh", "Pongiannan");
         // Then - Verify or Output
         assertThat(employee).isNotNull();
-        assertThat(employee.getId()).isEqualTo(1);
+        assertThat(employee.getId()).isGreaterThan(0);
     }
 
     // Junit for Get Custom Query
@@ -232,6 +232,6 @@ public class EmployeeRepositoryTest {
     // employee = employeeRepository.findQueryJpqlNative("Ramesh", "Pongiannan");
     // Then - Verify or Output
     assertThat(employee).isNotNull();
-    assertThat(employee.getId()).isEqualTo(1);
+    assertThat(employee.getId()).isGreaterThan(0);
 }
 }
