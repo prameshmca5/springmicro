@@ -78,10 +78,10 @@ public class EmployeeRepositoryTest {
               .build();
       employeeRepository.save(employee3);
       // When - Action
-      Employee emp = employeeRepository.findById(employee3.getId()).get();
+      Optional<Employee> emp = employeeRepository.findById(employee3.getId());
       // Then - Verify or Output
-      assertThat(emp).isNotNull();
-      assertThat(emp).isEqualTo(1);
+      assertThat(emp.get().getId()).isNotNull();
+      assertThat(emp.get().getId()).isEqualTo(1);
   }
 
   // Junit for
@@ -93,13 +93,13 @@ public class EmployeeRepositoryTest {
       Employee employee4 = Employee.builder()
               .firstName("Ramesh")
               .lastName("Pongiannan")
-              .email("ramesh@gmail.com")
+              .email("ramesh44@gmail.com")
               .build();
       employeeRepository.save(employee4);
       // When - Action
-      Employee emp = employeeRepository.findByEmail(employee4.getEmail()).get();
+      Optional<Employee> emp = employeeRepository.findByEmail(employee4.getEmail());
       // Then - Verify or Output
-      assertThat(emp).isNotNull();
-      assertThat(emp).isEqualTo(1);
+      assertThat(emp.get().getEmail()).isNotNull();
+      assertThat(emp.get().getEmail()).isEqualTo("ramesh44@gmail.com");
   }
 }
