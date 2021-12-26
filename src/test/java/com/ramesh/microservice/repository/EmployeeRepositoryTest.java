@@ -83,4 +83,23 @@ public class EmployeeRepositoryTest {
       assertThat(emp).isNotNull();
       assertThat(emp).isEqualTo(1);
   }
+
+  // Junit for
+    @DisplayName("EmpolyeeDetailsgettingEmail")
+  @Test
+  public void givenEmployee_whenFindbyEmail_thenEmployeeDetails() {
+
+      // Given - Setup
+      Employee employee4 = Employee.builder()
+              .firstName("Ramesh")
+              .lastName("Pongiannan")
+              .email("ramesh@gmail.com")
+              .build();
+      employeeRepository.save(employee4);
+      // When - Action
+      Employee emp = employeeRepository.findByEmail(employee4.getEmail()).get();
+      // Then - Verify or Output
+      assertThat(emp).isNotNull();
+      assertThat(emp).isEqualTo(1);
+  }
 }
