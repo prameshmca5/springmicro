@@ -13,7 +13,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="employess")
+@Table(name="employees")
 public class Employee {
 
     @Id
@@ -28,5 +28,7 @@ public class Employee {
 
     @Column(nullable = false)
     private String email;
+
+
 
 }
