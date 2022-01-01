@@ -1,6 +1,6 @@
 package com.ramesh.microservice.repository;
 
-import com.ramesh.microservice.model.Employee;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -12,19 +12,19 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import java.util.List;
 import java.util.Optional;
 
-@DataJpaTest
+//@DataJpaTest
 public class EmployeeRepositoryTest {
 
-
+/*
 
     @Autowired
     public EmployeeRepository employeeRepository;
 
-    private Employee employee;
+    private depemp employee;
 
     @BeforeEach
     public void setup(){
-        employee = Employee.builder()
+        employee = depemp.builder()
                 .firstName("Ramesh")
                 .lastName("Pongiannan")
                 .email("ramesh@gmail.com")
@@ -38,14 +38,14 @@ public class EmployeeRepositoryTest {
     @Test
     public void givenEmployeeObj_whenSave_thenReturnSavedEmployee() {
         // Given - Setup
-      /*  Employee employee = Employee.builder()
+         Employee employee = Employee.builder()
                 .firstName("Ramesh")
                 .lastName("Pongiannan")
                 .email("ramesh@gmail.com")
                 .build();
-        */
+
         // When - action
-        Employee saveEmployee = employeeRepository.save(employee);
+        depemp saveEmployee = employeeRepository.save(employee);
         // Then - verify the output
         assertThat(saveEmployee).isNotNull();
         assertThat(saveEmployee.getId()).isGreaterThan(0);
@@ -57,13 +57,13 @@ public class EmployeeRepositoryTest {
    public void givenEmployeeList_whenFindAll_thenEmployeeList(){
 
        // Given - Setup
-      /*   Employee employee1 = Employee.builder()
+         Employee employee1 = Employee.builder()
                .firstName("Ramesh")
                .lastName("Pongiannan")
                .email("ramesh@gmail.com")
                .build();
-*/
-       Employee employee2 = Employee.builder()
+
+       depemp employee2 = depemp.builder()
                .firstName("Ramesh2")
                .lastName("Pongiannan2")
                .email("ramesh2@gmail.com")
@@ -72,7 +72,7 @@ public class EmployeeRepositoryTest {
        employeeRepository.save(employee2);
 
        // When - Action
-       List<Employee> employeeList = employeeRepository.findAll();
+       List<depemp> employeeList = employeeRepository.findAll();
 
        // Then - Verify or Output
        assertThat(employeeList).isNotNull();
@@ -85,16 +85,16 @@ public class EmployeeRepositoryTest {
   public void givenEmployee_whenFindbyId_thenEmloyeeDetails(){
 
       // Given - Setup
-    /*    Employee employee3 = Employee.builder()
+       Employee employee3 = Employee.builder()
               .firstName("Ramesh")
               .lastName("Pongiannan")
               .email("ramesh@gmail.com")
               .build();
 
-     */
+
       employeeRepository.save(employee);
       // When - Action
-      Optional<Employee> emp = employeeRepository.findById(employee.getId());
+      Optional<depemp> emp = employeeRepository.findById(employee.getId());
       // Then - Verify or Output
       assertThat(emp.get().getId()).isNotNull();
       assertThat(emp.get().getId()).isGreaterThan(0);
@@ -106,16 +106,16 @@ public class EmployeeRepositoryTest {
   public void givenEmployee_whenFindbyEmail_thenEmployeeDetails() {
 
       // Given - Setup
-     /*   Employee employee4 = Employee.builder()
+       Employee employee4 = Employee.builder()
               .firstName("Ramesh")
               .lastName("Pongiannan")
               .email("ramesh44@gmail.com")
               .build();
 
-      */
+
       employeeRepository.save(employee);
       // When - Action
-      Optional<Employee> emp = employeeRepository.findByEmail(employee.getEmail());
+      Optional<depemp> emp = employeeRepository.findByEmail(employee.getEmail());
       // Then - Verify or Output
       assertThat(emp.get().getEmail()).isNotNull();
       assertThat(emp.get().getEmail()).isEqualTo("ramesh@gmail.com");
@@ -127,16 +127,16 @@ public class EmployeeRepositoryTest {
      public void givenEmployee_whenUpdateEmployee_thenGetEmployeeDetails(){
 
          // Given - Setup
-     /*     Employee employee4 = Employee.builder()
+          Employee employee4 = Employee.builder()
                 .firstName("Ramesh")
                 .lastName("Pongiannan")
                 .email("ramesh44@gmail.com")
                 .build();
 
-      */
+
         employeeRepository.save(employee);
          // When - Action
-        Optional<Employee> emp = employeeRepository.findByEmail(employee.getEmail());
+        Optional<depemp> emp = employeeRepository.findByEmail(employee.getEmail());
         emp.get().setEmail("Laxsha@gmail.com");
         employeeRepository.save(emp.get());
          // Then - Verify or Output
@@ -150,16 +150,16 @@ public class EmployeeRepositoryTest {
     public void givenEmployee_whenDeleteEmployee_thenGetEmployeeDetails(){
 
         // Given - Setup
-       /*   Employee employee4 = Employee.builder()
+          Employee employee4 = Employee.builder()
                 .firstName("Ramesh")
                 .lastName("Pongiannan")
                 .email("ramesh44@gmail.com")
                 .build();
 
-        */
+
         employeeRepository.save(employee);
         // When - Action
-        Optional<Employee> emp = employeeRepository.findById(employee.getId());
+        Optional<depemp> emp = employeeRepository.findById(employee.getId());
        // emp.get().setEmail("Laxsha@gmail.com");
         employeeRepository.delete(emp.get());
         // Then - Verify or Output
@@ -235,4 +235,6 @@ public class EmployeeRepositoryTest {
     assertThat(employee).isNotNull();
     assertThat(employee.getId()).isGreaterThan(0);
 }
+
+ */
 }

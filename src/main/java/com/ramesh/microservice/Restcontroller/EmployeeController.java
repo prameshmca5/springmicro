@@ -19,6 +19,7 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Employee createEmployee(@RequestBody Employee employee){
@@ -36,4 +37,5 @@ public class EmployeeController {
                 .map(ResponseEntity::ok)
                 .orElseGet(()->ResponseEntity.notFound().build());
     }
+
 }
